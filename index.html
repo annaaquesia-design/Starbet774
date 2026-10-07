@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StatBet777 — Protótipo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">STAT<span>BET777</span></div>
+    <div class="balance">Saldo: <strong id="balance">R$ 0,00</strong></div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="tag">PROTÓTIPO</p>
+        <h1>Sua ficha para jogar</h1>
+        <p class="subtitle">Adicione uma ficha virtual de R$ 20,00 e acesse a área de jogos demonstrativa.</p>
+      </div>
+      <button class="deposit-btn" id="openDeposit">Depositar R$ 20,00</button>
+    </section>
+
+    <section class="wallet">
+      <div>
+        <span class="label">Carteira</span>
+        <div class="big-balance" id="walletBalance">R$ 0,00</div>
+      </div>
+      <div class="token">
+        <span>Fichas</span>
+        <strong id="tokens">0</strong>
+      </div>
+    </section>
+
+    <section class="games">
+      <div class="section-title">
+        <h2>Jogos demonstrativos</h2>
+        <span id="gameStatus">Bloqueados</span>
+      </div>
+      <div class="game-grid">
+        <article class="game-card locked" data-game="Fortune Tiger">
+          <div class="game-icon">🐯</div>
+          <h3>Fortune Tiger</h3>
+          <button class="play-btn" disabled>Jogar</button>
+        </article>
+        <article class="game-card locked" data-game="Fortune Rabbit">
+          <div class="game-icon">🐰</div>
+          <h3>Fortune Rabbit</h3>
+          <button class="play-btn" disabled>Jogar</button>
+        </article>
+        <article class="game-card locked" data-game="Aviator">
+          <div class="game-icon">✈️</div>
+          <h3>Aviator</h3>
+          <button class="play-btn" disabled>Jogar</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="depositModal">
+    <div class="modal-box">
+      <button class="close" id="closeDeposit">×</button>
+      <p class="tag">DEPÓSITO SIMULADO</p>
+      <h2>Adicionar 1 ficha</h2>
+      <p class="modal-text">Neste protótipo, o pagamento é apenas fictício. Nenhum dinheiro real é movimentado.</p>
+      <div class="pix-box">
+        <span>Valor da ficha</span>
+        <strong>R$ 20,00</strong>
+        <small>PIX DEMONSTRATIVO — NÃO É UMA CHAVE REAL</small>
+      </div>
+      <button class="confirm-btn" id="confirmDeposit">Confirmar depósito simulado</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
