@@ -1,79 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StatBet777 — Protótipo</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatBet777 — Jogos Demonstrativos</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">STAT<span>BET777</span></div>
-    <div class="balance">Saldo: <strong id="balance">R$ 0,00</strong></div>
-  </header>
+<header class="topbar">
+  <div class="logo">STAT<span>BET777</span></div>
+  <div class="balance">Saldo virtual: <strong id="balance">R$ 20,00</strong></div>
+</header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <p class="tag">PROTÓTIPO</p>
-        <h1>Sua ficha para jogar</h1>
-        <p class="subtitle">Adicione uma ficha virtual de R$ 20,00 e acesse a área de jogos demonstrativa.</p>
-      </div>
-      <button class="deposit-btn" id="openDeposit">Depositar R$ 20,00</button>
-    </section>
-
-    <section class="wallet">
-      <div>
-        <span class="label">Carteira</span>
-        <div class="big-balance" id="walletBalance">R$ 0,00</div>
-      </div>
-      <div class="token">
-        <span>Fichas</span>
-        <strong id="tokens">0</strong>
-      </div>
-    </section>
-
-    <section class="games">
-      <div class="section-title">
-        <h2>Jogos demonstrativos</h2>
-        <span id="gameStatus">Bloqueados</span>
-      </div>
-      <div class="game-grid">
-        <article class="game-card locked" data-game="Fortune Tiger">
-          <div class="game-icon">🐯</div>
-          <h3>Fortune Tiger</h3>
-          <button class="play-btn" disabled>Jogar</button>
-        </article>
-        <article class="game-card locked" data-game="Fortune Rabbit">
-          <div class="game-icon">🐰</div>
-          <h3>Fortune Rabbit</h3>
-          <button class="play-btn" disabled>Jogar</button>
-        </article>
-        <article class="game-card locked" data-game="Aviator">
-          <div class="game-icon">✈️</div>
-          <h3>Aviator</h3>
-          <button class="play-btn" disabled>Jogar</button>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <div class="modal hidden" id="depositModal">
-    <div class="modal-box">
-      <button class="close" id="closeDeposit">×</button>
-      <p class="tag">DEPÓSITO SIMULADO</p>
-      <h2>Adicionar 1 ficha</h2>
-      <p class="modal-text">Neste protótipo, o pagamento é apenas fictício. Nenhum dinheiro real é movimentado.</p>
-      <div class="pix-box">
-        <span>Valor da ficha</span>
-        <strong>R$ 20,00</strong>
-        <small>PIX DEMONSTRATIVO — NÃO É UMA CHAVE REAL</small>
-      </div>
-      <button class="confirm-btn" id="confirmDeposit">Confirmar depósito simulado</button>
+<main class="container">
+  <section class="hero">
+    <div>
+      <p class="tag">MODO DEMONSTRATIVO</p>
+      <h1>Escolha seu jogo</h1>
+      <p class="subtitle">Jogos apenas para demonstração. Nenhum pagamento, aposta ou saque real é realizado.</p>
     </div>
-  </div>
+    <div class="ticket"><span>FICHA</span><strong id="tokens">1</strong></div>
+  </section>
 
-  <div class="toast" id="toast"></div>
-  <script src="script.js"></script>
+  <section class="games">
+    <div class="section-title">
+      <h2>Jogos</h2>
+      <span>Créditos virtuais</span>
+    </div>
+    <div class="game-grid">
+      <article class="game-card">
+        <div class="game-icon">🐯</div>
+        <h3>Fortune Tiger</h3>
+        <p>Revele três símbolos e veja o resultado.</p>
+        <button class="play-btn" data-game="tiger">Jogar</button>
+      </article>
+      <article class="game-card">
+        <div class="game-icon">🐰</div>
+        <h3>Fortune Rabbit</h3>
+        <p>Gire a máquina virtual e descubra a combinação.</p>
+        <button class="play-btn" data-game="rabbit">Jogar</button>
+      </article>
+      <article class="game-card">
+        <div class="game-icon">✈️</div>
+        <h3>Aviator</h3>
+        <p>Acompanhe o multiplicador de uma rodada simulada.</p>
+        <button class="play-btn" data-game="aviator">Jogar</button>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="modal hidden" id="gameModal">
+  <div class="game-modal">
+    <button class="close" id="closeGame">×</button>
+    <p class="tag" id="modalTag">JOGO</p>
+    <h2 id="modalTitle">Jogo</h2>
+    <div id="gameArea"></div>
+    <button class="primary" id="playAgain">Jogar novamente</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
 </body>
 </html>
